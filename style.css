@@ -52,6 +52,30 @@ h1 {
     flex-wrap: wrap;
 }
 
+.control-group {
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    min-width: 250px;
+    gap: 12px; /*控制组内部元素间距*/
+}
+
+.group-title {
+    text-align: center;
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+    color: #ff7ed4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+
 button {
     background: linear-gradient(45deg, #ff7ed4, #9370db);
     color: white;
@@ -204,7 +228,7 @@ button:disabled {
 }
 
 
-/* 新增：图片数量选择器样式 */
+/* 图片数量选择器样式 */
 .image-counter {
     display: flex;
     align-items: center;
@@ -270,12 +294,71 @@ button:disabled {
     box-shadow: 0 0 0 2px rgba(255, 126, 212, 0.3);
 }
 
-.counter-value-display {
-    min-width: 40px;
-    text-align: center;
-    font-weight: bold;
+
+ /* 图片源选择器 */
+.source-selector {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.source-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.source-item:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.source-item.active {
+    background: rgba(147, 112, 219, 0.2);
+    border-color: #9370db;
+    box-shadow: 0 0 10px rgba(147, 112, 219, 0.3);
+}
+
+.source-icon {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    border-radius: 50%;
+    background: rgba(255, 126, 212, 0.2);
     color: #ff7ed4;
-    font-size: 1.1rem;
+}
+
+.source-name {
+    flex: 1;
+    font-size: 1rem;
+}
+
+
+
+.source-preview {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 5px;
+}
+
+.preview-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.preview-dot.active {
+    background: #ff7ed4;
+    box-shadow: 0 0 5px #ff7ed4;
 }
 
 @media (max-width: 768px) {
