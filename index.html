@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>二次元图片加载器</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>二次元图片加载器</h1>
+        </header>
+        
+        <div class="notice">
+            <strong>Ciallo～(∠・ω< )⌒★</strong>  右键图片可以选择复制地址哦~
+        </div>
+        
+        <div class="controls">
+            <button id="loadBtn">
+                <i class="fas fa-download"></i> 开始加载
+            </button>
+            <button id="resetBtn">
+                <i class="fas fa-redo"></i> 重置页面
+            </button>
+            
+            <!-- 新增：图片数量选择器 -->
+            <div class="image-counter">
+                <span class="counter-label">加载数量：</span>
+                <div class="counter-controls">
+                    <button class="counter-btn" id="decrementBtn">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                    <input type="number" class="counter-input" id="imageCount" value="4" min="1" max="20">
+                    <span class="counter-value-display" id="counterValue">8</span>
+                    <button class="counter-btn" id="incrementBtn">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+        
+        <div class="status" id="status">点击上方按钮开始加载图片...</div>
+        
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-value" id="loadedCount">0</div>
+                <div class="stat-label">已加载图片</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="successCount">0</div>
+                <div class="stat-label">成功加载</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="errorCount">0</div>
+                <div class="stat-label">加载失败</div>
+            </div>
+        </div>
+        
+        <div class="gallery" id="gallery"></div>
+        
+        <footer>
+            <p>注意：图片加载可能需要一些时间，请耐心等待</p>
+        </footer>
+    </div>
+
+    <script src="getimg.js"></script>
+</body>
+</html>
